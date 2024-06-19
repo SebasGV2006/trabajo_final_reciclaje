@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGR - servicios</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="icon" href="Img/logo.png">
+    
+</head>
+<body class="light-theme">
+
+    <header class="cabezera">
+        <div class="header">
+            <div class="logo">
+                <img src="Img/logo.png" alt="">
+            </div>
+        <nav>
+            <ul class="nav-links">
+              
+            <li><a href="index.html" id="link">Principal</a></li>
+              <li><a href="#servicios">Conoce nuestros servicios</a></li>
+              <li><a href="#opciones_servicios">Elije opciones</a></li>
+              
+            </ul>
+        </nav>
+        <button class="btn">Oscuro</button>
+        </div>
+        <div class="fondo">
+            <div class="fondo_opacidad"></div>
+            <h1>Servicios qeu ofrecemos en SGR</h1>
+            
+        </div>
+        
+    </header>
+    <main>
+
+        <div class="servicios" id="servicios">
+
+            <h1 class="sub-titulo">Conoce los servicios <br> que ofrecemos </h1>
+
+            <div class="caja2">
+                <p class="parrafo1">
+                    En SGR nos preocupa que los estudiantes de los colegios utilizen las 3 R's (Recicla, Reduce, Reutiliza)
+                    por ende ofrecemos servicios variados para la gestion de reciclaje dentro de las instituciones,
+                    contamos con: <br><br>
+                    1. Gestion de datos de las empresas con las que tengan combenio. <br><br>
+                    2. Gestion de los delegados/encargados del reciclaje <br><br>
+                    3. Gestion de las cantidades recicladas y reutilizadas dentro de la institucion. <br><br><br>
+                    A continuacion puedes elegir una de nuestras opciones:
+                </p>
+            </div>
+            <div class="opciones_servicios" id="opciones_servicios">
+                    <button onclick="mostrarFormAgregarEmpresa()" class="boton-mostrar">Agregar Empresas Recolectoras</button>
+
+                    <div class="container" id="agregarFormularioEmpresa" style="display: none;">
+                        <form id="aggForm-Empresas">
+                        
+                            <div class="formulario">
+                               <div class="form-parte">
+                                   <label> Nombre Empresa:</label>
+                                   <input type="text" class="form-control" id="nombre" required>
+                               </div>
+                               <div class="form-parte">
+                                    <label> Direccion:</label>
+                                    <input type="text" class="form-control" id="direccion" required>
+                                </div>
+                                <div class="form-parte">
+                                    <label >Identificacion Fiscal:</label>
+                                    <input type="text" class="form-control" id="identificacion-fiscal" required>
+                                </div>
+                                <div class="form-parte">
+                                    <label >Telefono:</label>
+                                    <input type="number" class="form-control" id="telefono" required>
+                                </div>
+                                <div class="form-parte">
+                                    <label >Correo:</label>
+                                    <input type="email" class="form-control" id="coreo" required>
+                                </div>
+                                <button type="submit" class="btn-agr-registro">Agregar registro</button>
+                                <button onclick="ocultarFormAgregarEmpresa()" class="boton-ocultar">Ocultar Formulario</button>
+                            </div>
+                            
+                        </form>
+                        
+
+                    </div>
+            
+            
+                    <button onclick="mostrarFormAgregarDelegado()" class="boton-mostrar" style="margin-top: 50px;">Agregar Delegados Recoleccion</button>
+
+                    <div class="container" id="agregarFormularioDelegado" style="display: none;">
+                        <form id="aggForm">
+                        
+                            <div class="formulario">
+                               <div class="form-parte">
+                                   <label for="name">Nombre Completo:</label>
+                                   <input type="text" class="form-control" id="name" required>
+                               </div>
+                                <div class="form-parte">
+                                    <label for="age">Edad:</label>
+                                    <input type="number" class="form-control" id="age" required>
+                                </div>
+                                <div class="form-parte">
+                                    <label for="email">Correo:</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="form-parte">
+                                    <label for="residuos">Residuos Reutilizables:</label>
+                                    <input type="number" class="form-control" id="residuos" required>
+                                </div>
+                                <div class="form-parte">
+                                    <label for="semanas">Semanas a reciclar</label>
+                                    <input type="number" class="form-control" id="semanas" required>
+                                </div>
+                                <button type="submit" class="btn-agr-registro">Agregar registro</button>
+                                <button onclick="ocultarFormAgregarDelegado()" class="boton-ocultar">Ocultar Formulario</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            
+
+                <!-- <div class="form-group mt-3">
+                    <label for="search">Search</label>
+                    <input type="text" class="form-control" id="search" placeholder="Search by name, age, or email">
+                </div> -->
+                <div class="tabla_guardados">
+                    <button onclick="mostrarTablaDatosGuardados()" class="boton-mostrar" >Mostrar los Datos Guardados</button>
+                    <div class="tabla-datos-guardados" id="datos-guardados" style="display: none;">
+                        <table class="table-guardado">
+                            <thead>
+                                <h4>Datos Guardados</h4>
+                                
+                                <tr>
+                                    <th>Nombre Completo:</th>
+                                    <th>Edad:</th>
+                                    <th>Correo:</th>
+                                    <th>Residuos <br>
+                                        reutilizables:
+                                    </th>
+                                    <th>Semanas <br>
+                                        a reciclar:
+                                    </th>
+                                    <th>Opciones:</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+
+                            </tbody>
+                            
+                        </table>
+                        <p>Nota: Si va a editar un registro primero debe darle al boton editar dentro de este formulario <br>
+                            despues debe abrir el formulario de actualizacion dandole al boton que aparece mas abajo <strong>"Mostrar Actualizacion de Datos"</strong> </p>
+                        <button onclick="ocultarTablaDatosGuardados()" class="boton-ocultar">Ocultar Formulario</button>
+                    </div>
+                    <div class="modal">
+
+                        <button onclick="mostrarFormActualizar()" class="boton-mostrar" style="margin-top: 50px;">Mostrar Actualizacion de datos</button>
+
+                        <div class="actualizar-datos" id="updateModal" style="display: none;">
+
+                            <div class="actualizar-body">
+                                <div class="modal-header">
+                                <h5 class="modal-title">Actualizar Datos</h5>
+                                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> --> 
+                            </div>
+                                <form id="actualizarForm" class="actualizarForm">
+                                    <div class="form-group">
+                                        <label for="updateName">Nombre Completo:</label>
+                                        <input type="text" class="form-control" id="updateName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateAge">Edad:</label>
+                                        <input type="number" class="form-control" id="updateAge" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateEmail">Correo:</label>
+                                        <input type="email" class="form-control" id="updateEmail" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateResiduos">Residuos Reutilizables:</label>
+                                        <input type="number" class="form-control" id="updateResiduos" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateSemanas">Semanas a reciclar:</label>
+                                        <input type="number" class="form-control" id="updateSemanas" required>
+                                    </div>
+                                    <button type="submit" class="btn-act-registro">Actualizar Registro</button>
+                                </form>
+                                <button onclick="ocultarFormActualizar()" class="boton-ocultar">Ocultar Formulario</button>
+                            </div>
+                            
+                        </div>   
+                    </div> 
+                    
+                </div>
+            </div>
+        
+
+            
+        </div>
+    </main>
+    <footer>
+        <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>SGR</strong>. Reserva todos los derechos</p>
+            <div class="credits">
+                Diseñado por <a target="_blank" href="https://www.facebook.com/">Sebastian Grisales</a>
+            </div>
+      </div>
+    </footer>
+    
+
+    <button id="scrollTop" class="scrollTop">▲</button>
+    <script src="Js/servicio.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
